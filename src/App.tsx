@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 import { Scroll, ScrollControls } from "@react-three/drei";
 import { Experience } from "./components/Experience";
@@ -6,6 +6,7 @@ import {Cursor} from "./components/Cursor.tsx";
 function App() {
     return (
         <>
+            <Cursor />
             <Canvas>
                 <color attach="background" args={["#ffffff"]} />
                 <Suspense fallback={null}>
@@ -16,7 +17,6 @@ function App() {
                     </ScrollControls>
                 </Suspense>
             </Canvas>
-            <Cursor />
         </>
     );
 }

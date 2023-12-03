@@ -27,41 +27,44 @@ export const Cursor: React.FC = () => {
     };
 
     useEffect(() => {
-        const mouseEventsListener = document.addEventListener(
-            "mousemove",
-            function (event) {
-                mouseX = event.pageX;
-                mouseY = event.pageY;
-            }
-        );
+        const mouseMoveHandler = (event: MouseEvent) => {
+            mouseX = event.pageX;
+            mouseY = event.pageY;
+        };
+
+        document.addEventListener("mousemove", mouseMoveHandler);
 
         const animateEvent = requestAnimationFrame(animate);
 
         return () => {
-            document.removeEventListener("mousemove", mouseEventsListener);
+            document.removeEventListener("mousemove", mouseMoveHandler);
             cancelAnimationFrame(animateEvent);
         };
     }, []);
 
     useEffect(() => {
-        const mouseEventListener = document.addEventListener(
-            "mouseover",
-            function (e) {
-                if (
-                    e.target instanceof HTMLAnchorElement ||
-                    e.target.parentElement instanceof HTMLAnchorElement ||
-                    e.target instanceof HTMLInputElement ||
-                    e.target instanceof HTMLTextAreaElement
-                ) {
-                    setHoverButton(true);
-                } else {
-                    setHoverButton(false);
+        const mouseOverHandler = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+
+            const isHovering =
+                target instanceof HTMLAnchorElement ||
+                (target.parentElement instanceof HTMLAnchorElement && target.parentElement) ||
+                target instanceof HTMLInputElement ||
+                target instanceof HTMLTextAreaElement;
+
+            setHoverButton((prevHoverButton) => {
+                // Ensure the correct type is passed to setHoverButton
+                if (typeof isHovering === 'boolean') {
+                    return isHovering;
                 }
-            }
-        );
+                return prevHoverButton;
+            });
+        };
+
+        document.addEventListener("mouseover", mouseOverHandler);
 
         return () => {
-            document.removeEventListener("mouseover", mouseEventListener);
+            document.removeEventListener("mouseover", mouseOverHandler);
         };
     }, []);
 
