@@ -1,10 +1,125 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  color: #303030;
+  cursor: none;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+.text-h6 {
+  font-size: 12px;
+  font-family: NeueMontreal-Regular;
+  line-height: 1.4;
+}
+a {
+  text-decoration: none;
+  cursor: none;
+}
+.text-description {
+  margin: 20px 0px 10px 1vw;
+  font-size: 12px;
+  line-height: 140%;
+  opacity: 1;
+  color: #303030;
+  letter-spacing: 3px;
+}
+
+.App-header {
+  top: 46px;
+  padding: 0px 3vw 0px 1vw;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 2vh;
+  width: calc(100vw - 2vw);;
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  color: #303030;
+}
+.App-header a img {
+  margin: 0px 0px 4px 1px;
+  width: 150px;
+}
+.App-header-logo {
+  font-size: 30px;
+}
+.App-header nav {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.App-header nav a {
+  margin-left: 24px;
+  font-size: 15px;
+  color: #303030;
+}
+.mail a img{
+  top: 1vw;
+  width: 50%;
+}
+
+
+
+
+
+.z-50 {
+  z-index: 60;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.-translate-x-1 {
+  transform: translateX(-50%);
+}
+
+.-translate-y-1 {
+  transform: translateY(-50%);
+}
+
+.rounded-full {
+  border-radius: 9999px; /* Utilisation d'une valeur élevée pour obtenir une forme de cercle */
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-duration: 0.3s; /* Ajoutez la durée souhaitée de la transition */
+  transition-timing-function: ease; /* Ajoutez la fonction de temporisation souhaitée */
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.border-2 {
+  border: 1.5px solid #323232;
+}
+
+.border-indigo-900 {
+  border-color: #303030; /* Remplacez par la couleur indigo-900 souhaitée */
+}
+
+.w-5 {
+  width: 1rem; /* Remplacez par la largeur souhaitée */
+}
+
+.h-5 {
+  height: 1rem; /* Remplacez par la hauteur souhaitée */
+}
+
+.bg-indigo-500 {
+  background-color: #303030; /* Remplacez par la couleur indigo-500 souhaitée */
+}
+
+.w-3 {
+  width: 0.75rem; /* Remplacez par la largeur souhaitée */
+}
+
+.h-3 {
+  height: 0.75rem; /* Remplacez par la hauteur souhaitée */
 }
