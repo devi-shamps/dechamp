@@ -15,14 +15,44 @@ export const projects = [
     {
         title: "AWeekOfCulture",
         url: "https://www.youtube.com/watch?v=LooODvrYXzE",
-        image: "projects/prout.jpg",
+        image: "projects/2.jpg",
         description: "OPEN PROJECT",
     },
     {
         title: "GSB",
         url: "https://www.youtube.com/watch?v=LooODvrYXzE",
-        image: "projects/1.jpg",
+        image: "projects/2.jpg",
         description: "Educated project, Business manager",
+    },
+    {
+        title: "IDon'tKnow",
+        url: "https://www.youtube.com/watch?v=LooODvrYXzE",
+        image: "projects/2.jpg",
+        description: "I don't fuc***g know what is it!",
+    },
+    {
+        title: "IDon'tKnow",
+        url: "https://www.youtube.com/watch?v=LooODvrYXzE",
+        image: "projects/2.jpg",
+        description: "I don't fuc***g know what is it!",
+    },
+    {
+        title: "IDon'tKnow",
+        url: "https://www.youtube.com/watch?v=LooODvrYXzE",
+        image: "projects/2.jpg",
+        description: "I don't fuc***g know what is it!",
+    },
+    {
+        title: "IDon'tKnow",
+        url: "https://www.youtube.com/watch?v=LooODvrYXzE",
+        image: "projects/2.jpg",
+        description: "I don't fuc***g know what is it!",
+    },
+    {
+        title: "IDon'tKnow",
+        url: "https://www.youtube.com/watch?v=LooODvrYXzE",
+        image: "projects/2.jpg",
+        description: "I don't fuc***g know what is it!",
     },
     {
         title: "IDon'tKnow",
@@ -54,12 +84,12 @@ export const Projects: React.FC = () => {
     const { viewport } = useThree();
     const ref = useRef<any>();
     const scroll = useScroll();
-    useFrame(() => (ref.current.position.y = scroll.offset * 13));
+    useFrame(() => (ref.current.position.x = -scroll.offset * 100));
 
-    return <group position-y={viewport.left} ref={ref}>
+    return <group position-x={viewport.left} ref={ref} >
         {
             projects.map((project, index) => (
-                <motion.group key={"project_" + index} position={[index * 11.5, 0, -1]}>
+                <motion.group key={"project_" + index} position={[index * 11.5, index * -3.6, -1]}>
                     <Project project={project} />
                 </motion.group>
             ))

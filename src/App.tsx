@@ -8,9 +8,9 @@ function App() {
         <>
             <Cursor />
             <Canvas>
-                <color attach="background" args={["#ffffff"]} />
+                <color attach="background" args={["#090909"]} />
                 <Suspense fallback={null}>
-                    <ScrollControls horizontal damping={0.2} pages={3}>
+                    <ScrollControls damping={0.2} pages={5} infinite>
                         <Scroll>
                             <Experience section={0} menuOpened={false} />
                         </Scroll>
